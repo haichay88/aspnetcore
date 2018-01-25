@@ -10,5 +10,6 @@ namespace tube.Data
         /// Call save change from db context
         /// </summary>
         void Commit();
+        IRepository<T> Repository<T>() where T : class;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace tube.Business
+namespace tube.Ultilites
 {
     public class Class1
     {

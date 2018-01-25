@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aspnetcore", "aspnetcore\aspnetcore.csproj", "{ECAD514D-66AB-496D-9481-6467C0B3C3EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "aspnetcore", "aspnetcore\aspnetcore.csproj", "{ECAD514D-66AB-496D-9481-6467C0B3C3EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tube.Data", "tube.Data\tube.Data.csproj", "{BB9DFD29-779B-48E8-9EB3-F90AD4E3F2DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tube.Data", "tube.Data\tube.Data.csproj", "{BB9DFD29-779B-48E8-9EB3-F90AD4E3F2DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tube.Business", "tube.Business\tube.Business.csproj", "{92ABD242-2389-473D-B71D-D071037BBCA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tube.Business", "tube.Business\tube.Business.csproj", "{92ABD242-2389-473D-B71D-D071037BBCA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tube.Model", "tube.Model\tube.Model.csproj", "{B771FD27-08BB-4184-90A2-54CD40D22C05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tube.Model", "tube.Model\tube.Model.csproj", "{B771FD27-08BB-4184-90A2-54CD40D22C05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tube.Entities", "tube.Entities\tube.Entities.csproj", "{01333E81-EEE6-4243-8E3D-CFBA8E7336FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tube.Entities", "tube.Entities\tube.Entities.csproj", "{01333E81-EEE6-4243-8E3D-CFBA8E7336FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tube.Services", "tube.Services\tube.Services.csproj", "{D5DA9929-CA1D-4B47-AD0C-FF5B5A6A32E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tube.Services", "tube.Services\tube.Services.csproj", "{D5DA9929-CA1D-4B47-AD0C-FF5B5A6A32E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tube.Ultilites", "tube.Ultilites\tube.Ultilites.csproj", "{72DB386F-72B6-45CA-8469-73B29D271A4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{D5DA9929-CA1D-4B47-AD0C-FF5B5A6A32E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5DA9929-CA1D-4B47-AD0C-FF5B5A6A32E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5DA9929-CA1D-4B47-AD0C-FF5B5A6A32E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72DB386F-72B6-45CA-8469-73B29D271A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72DB386F-72B6-45CA-8469-73B29D271A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72DB386F-72B6-45CA-8469-73B29D271A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72DB386F-72B6-45CA-8469-73B29D271A4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
