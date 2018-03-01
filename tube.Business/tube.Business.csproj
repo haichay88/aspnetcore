@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\tube.Data\tube.Data.csproj" />
+    <ProjectReference Include="..\tube.Ultilites\tube.Ultilites.csproj" />
   </ItemGroup>
 
 </Project>

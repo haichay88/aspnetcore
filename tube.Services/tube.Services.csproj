@@ -4,4 +4,16 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.YouTube.v3" Version="1.32.1.1079" />
+    <PackageReference Include="log4net" Version="2.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\tube.Business\tube.Business.csproj" />
+    <ProjectReference Include="..\tube.Extention\tube.Extention.csproj" />
+    <ProjectReference Include="..\tube.Model\tube.Model.csproj" />
+    <ProjectReference Include="..\tube.Ultilites\tube.Ultilites.csproj" />
+  </ItemGroup>
+
 </Project>
