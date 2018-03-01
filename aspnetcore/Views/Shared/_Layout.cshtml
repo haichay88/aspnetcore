@@ -4,10 +4,43 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - aspnetcore</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Html.Raw(ViewBag.Title)</title>
+    <meta name="robots" content="index,follow" />
+
+    <!-- Jetpack Open Graph Tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="@Html.Raw(ViewBag.Title)" />
+    <meta property="og:url" content="@ViewBag.Url" />
+    <meta property="og:description" content="@Html.Raw(ViewBag.Description)" />
+    <meta property="article:published_time" content="@ViewBag.CreatedDate" />
+    <meta property="article:modified_time" content="@ViewBag.CreatedDate" />
+    <meta property="og:site_name" content="@tube.Ultilites.CommonKey.DOMAIN" />
+    <meta property="og:image" content="@ViewBag.Image" />
+    <meta property="og:image:width" content="@ViewBag.width" />
+    <meta property="og:image:height" content="@ViewBag.height" />
+    <meta property="og:locale" content="@ViewBag.culture" />
+    <meta name="twitter:site" content="@tube.Ultilites.CommonKey.DOMAIN" />
+    <meta name="twitter:text:title" content="@Html.Raw(ViewBag.Title)" />
+    <meta name="twitter:image" content="@ViewBag.Image" />
+    <meta name="twitter:card" content="summary" />
+    <!-- the rich data-->
+    <meta itemprop="name" content="@tube.Ultilites.CommonKey.DOMAIN" />
+    <link rel="alternate" href="https://@tube.Ultilites.CommonKey.DOMAIN/" hreflang="x-default" />
+    <link rel="canonical" href="@ViewBag.Url">
+    <link rel="icon" href="~/Content/images/2-ico.png" />
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="@Html.Raw(ViewBag.Keywords)" />
+    <meta name="description" content="@Html.Raw(ViewBag.Description)"> 
+   
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link href="~/Content/fontcss.css" rel="stylesheet" />
+        <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
