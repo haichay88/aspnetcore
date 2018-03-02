@@ -1,0 +1,72 @@
+﻿@{
+    int count = 0;
+    var title = string.Empty;
+    var titleVideo = string.Empty;
+}
+@model  List<_2tube.Model.VideoDTO>
+@foreach (var item in Model)
+{
+    title = MyFinance.Utils.CommonUtil.FriendlyURL(item.chanelTitle);
+    titleVideo = MyFinance.Utils.CommonUtil.FriendlyURL(item.title);
+    if (string.IsNullOrEmpty(titleVideo))
+    {
+        titleVideo = "video";
+    }
+    if (string.IsNullOrEmpty(title))
+    {
+        title = "channel";
+    }
+
+    if (count % 6 == 0)
+    {
+        @:<div class="row">
+                }
+    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 item-video">
+        <div class="video-item">
+            <div class="thumb">
+                <div class="hover-efect"></div>
+                @if (!string.IsNullOrEmpty(item.durationView))
+                {
+                <small class="time">@item.durationView</small>
+               
+                }
+    
+                <a href="@Url.RouteUrl("chitietvideo", new {text =titleVideo, id = item.videoId  })"><img src="@item.imgUrl" alt="@item.title">
+                @if (item.isLive)
+                {
+                    <span class="duration" title="Streaming"><i class="fa fa-circle" style="color:red"></i> LIVE</span>
+                }
+                   
+                   
+                </a>
+            </div>
+            <div class="video-info">
+                <a href="@Url.RouteUrl("chitietvideo", new {text =titleVideo, id = item.videoId })" class="title">@item.title </a>
+               
+
+             
+                <a class="channel-name" href="@Url.RouteUrl("chitietkenh", new {text =title, id = item.chanelId })">
+                    @item.chanelTitle<span>
+                        <i class="fa fa-check-circle"></i>
+                    </span>
+                </a>
+                @if (!string.IsNullOrEmpty(item.viewcountView))
+                {
+                    <span class="views"><i class="fa fa-eye"></i>@item.viewcountView @Resources.GlobalRes.Views </span>
+                }
+                @if (!string.IsNullOrEmpty(item.publishDateView))
+                {
+                    <span class="date"><i class="fa fa-clock-o"></i>@item.publishDateView </span>
+                }
+                
+            </div>
+        </div>
+    </div>
+    count++;
+    if (count % 6 == 0)
+    {
+        @:</div>
+                }
+
+}
+

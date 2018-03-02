@@ -12,6 +12,7 @@ namespace tube.Model
         public string channelId { get; set; }
         public string keyword { get; set; }
         public bool IsLive { get; set; }
+        public string RegionCode { get; set; }
         public int MaxResults { get; set; }
     }
 }

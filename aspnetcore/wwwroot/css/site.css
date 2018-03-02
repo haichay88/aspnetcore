@@ -1,35 +1,232 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿.video_info_actions .detail-bg {
+    color: #2d2d2d;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 0 15px;
+    background: #fff;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.video_info_actions {
+    padding: 0;
 }
-
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+    .video_info_actions .title-area {
+        margin: 0;
+    }
+        .video_info_actions .title-area h1 {
+            font-size: 20px;
+            line-height: 28px;
+            margin: 5px 0 10px;
+            font-weight: 400;
+            color: #333;
+        }
+    .video_info_actions .user-likes-count {
+        margin: 0 -15px;
+    }
+    .video_info_actions .detail-bg {
+        color: #2d2d2d;
+        border-bottom: 1px solid #dcdcdc;
+        padding: 0 15px;
+        background: #fff;
+    }
+    .video_info_actions .user-likes-count .like-rating-block .views-count {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .video_info_actions .user-likes-count .user-info .sub-title .user_title {
+        display: block;
+        font-size: 12px;
+        line-height: 22px;
+        font-weight: 500;
+        margin: -5px 0 0;
+        text-transform: capitalize;
+    }
+    .video_info_actions .user-likes-count .user-info .avatar {
+        display: inline-block;
+        vertical-align: middle;
+        width: 55px;
+        height: 55px;
+        margin: 0 10px 0 0;
+    }
+    .video_info_actions .user-likes-count .user-info .sub-title {
+        display: inline-block;
+        vertical-align: middle;
+    }
+        .video_info_actions .user-likes-count .user-info .sub-title .user_title a {
+            color: #333;
+        }
+        .video_info_actions .user-likes-count .user-info .sub-title .btn-subscribe {
+            font-size: 12px;
+            line-height: 24px;
+            font-weight: 400;
+            padding: 0;
+            border: 0;
+            background: #cc181e;
+        }
+            .video_info_actions .user-likes-count .user-info .sub-title .btn-subscribe span {
+                float: left;
+                padding: 0 6px;
+                border: solid #cc181e;
+                border-width: 1px;
+                border-radius: 2px;
+            }
+                .video_info_actions .user-likes-count .user-info .sub-title .btn-subscribe span i.fa-youtube-play {
+                    background: 0 0;
+                    border: none;
+                    color: #fff;
+                    float: left;
+                    font-size: 16px;
+                    line-height: 23px;
+                    margin: 0 3px 0 -3px;
+                    padding: 0;
+                }
+        .video_info_actions .user-likes-count .user-info .sub-title .btn-holder .dropdown {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 0 0 5px;
+        }
+vbut {
+    display: inline-block;
+    padding: 2px 6px;
+    margin: 3px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
 }
+#cb_player, .player-holder {
+    padding: 5px;
+    margin: 0 0 13px;
+}
+#closesh {
+    position: relative;
+    top: 3px;
+    right: 3px;
+    color: #ccc;
+    float: right;
+    cursor: pointer;
+}
+.share_form .form-group label:first-child {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    margin: 0 5px 5px 0;
+}
+.replay {
+    float: right;
+    background: url(/Content/images/replay.png) 100% 100% no-repeat;
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    filter: alpha(Opacity=25);
+    opacity: 0.25;
+    margin: 0 0 0 10px;
+    cursor: pointer;
+}
+.dropdown-menu.pull-right {
+    right: 0;
+    left: auto;
+}
+.rating {
+    text-align: right;
+    color: #7e7e7e;
+    font-size: 12px;
+    line-height: 17px;
+    padding: 2px 0 40px;
+    margin: 0 0 -40px;
+    position: relative;
+}
+    .rating .rating-holder {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+    }
+        .rating .rating-holder .ratting-progress {
+            position: absolute;
+            height: 2px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            background: #ccc;
+        }
+    .rating .like-dislike {
+        width: 80px;
+        margin: 10px 0 0 5px;
+        text-align: right;
+    }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
+     .rating #circle, .rating .like-dislike {
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+    }
+        .rating .like-dislike a {
+            display: block;
+        }
+            .rating .like-dislike a.btn-like i {
+                opacity: .5;
+                margin: 0 2px 0 0;
+                background: url(/content/images/up.png) no-repeat;
+                background-size: 100%;
+                width: 20px;
+                height: 20px;
+            }
+            .rating .like-dislike a i {
+                display: inline-block;
+                vertical-align: middle;
+                height: 14px;
+                width: 24px;
+            }
+#disl_num, #l_num {
+    line-height: 25px;
+    vertical-align: top;
+}
+.rating .like-dislike a.btn-dislike i {
+    opacity: .5;
+    margin: 0 5px 0 0;
+    background: url(/content/images/down.png) no-repeat;
+    background-size: 100%;
+    width: 22px;
+    height: 20px;
+}
+.video_info_actions .user-likes-count .like-rating-block {
+    text-align: right;
+    color: #333;
+}
+.tune-tabs .nav-tabs.nav {
+    font-size: 13px;
+    /* border: 1px solid #e1e1e1; */
+    border-width: 1px 0;
+}
+    .tune-tabs .nav-tabs.nav > li {
+        margin: 0 0 -1px;
+    }
+        .tune-tabs .nav-tabs.nav > li.active > a, .tune-tabs .nav-tabs.nav > li.active > a:focus, .tune-tabs .nav-tabs.nav > li.active > a:hover, .tune-tabs .nav-tabs.nav > li > a:hover {
+            border-color: #06c;
+            background: 0 0;
+            color: #333;
+        }
+        .tune-tabs .nav-tabs.nav > li > a {
+            border-bottom: 1px solid #e1e1e1;
+            border-width: 0 0 2px;
+            border-color: transparent;
+            margin: 0;
+        }
+.btn-show-more {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: #f8f8f8;
+    border-color: #e2e2e2 transparent transparent;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: none;
+    color: #767676;
+    line-height: normal;
+    margin-top: 10px;
+    padding: 10px 0 10px;
+    text-transform: uppercase;
     width: 100%;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
-}
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
-}

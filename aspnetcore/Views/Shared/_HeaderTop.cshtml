@@ -1,0 +1,70 @@
+﻿@{ 
+    var regioncode = string.Empty;//tube.Ultilites.LanguageHelper.RegionManager.RegionCode.ToLower();
+}
+
+<header>
+    <div class="container-full">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-12">
+                <a href="javascript:void(0)" class="side-opener"><span></span><span></span><span></span></a>
+                <div id="logo">
+                    <a href="~/">
+                        <img src="~/images/logo tubenow.png" alt="2tubenow" class="hidden-xs hidden-sm" style="width:97px;">
+                        <img src="~/images/2-ico.png" alt="2tubenow" class="hidden-lg hidden-md" style="width:50px;">
+                    </a>
+                    <div class="dropdown">
+                        <a data-toggle="dropdown" href="#" class="user-area" aria-expanded="false">
+                            @*<h2>@_2tube.Ultilities.LanguageHelper.LanguageMang.LangIsSeleted().LanguageFullName</h2>*@
+                        </a>
+                        <ul class="dropdown-menu account-menu">
+                            @*@foreach (var item in _2tube.Ultilities.LanguageHelper.LanguageMang.AvailableLanguages)
+                            {
+                                <li><a href="~/Home/changeLanguage?lang=@item.LanguageCultureName"><i class="fa fa-edit color-1"></i>@item.LanguageFullName</a></li>
+
+                            }*@
+
+                        </ul>
+                    </div>
+
+
+
+                </div>
+                <div class="search-form hidden-md hidden-lg hidden-md search-form-mb ">
+                    @using (Html.BeginForm("Search", "Home", FormMethod.Get, new { id = "search" }))
+                    {
+                        <input type="text" placeholder="@Resources.GlobalRes.Placeholder_Search" name="query" autocomplete="off">
+                        <input type="submit" value="Keywords">
+                    }
+
+
+
+                </div>
+               
+                <div class="f16 f161"><a class="cis" href="#" data-toggle="modal" data-target="#regioncode" style="display:block"><span class="flag @regioncode"></span></a></div>
+          
+
+            </div><!-- // col-md-2 -->
+            <div class="col-lg-5 col-md-3 col-sm-6 hidden-xs hidden-sm">
+                <div class="search-form">
+                    @*@using (Html.BeginForm("Search", "Home", FormMethod.Get, new { id = "search" }))
+                    {
+                        <input type="text" placeholder="@Resources.GlobalRes.Placeholder_Search" name="query" autocomplete="off">
+                        <input type="submit" value="Keywords">
+                    }*@
+
+                </div>
+            </div><!-- // col-md-3 -->
+            <div class="col-lg-3 col-md-5 col-sm-5 hidden-xs hidden-sm">
+                <ul class="top-menu" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+                    @*<li itemprop="name"><a itemprop="url" href="~/">@Resources.GlobalRes.Home</a></li>
+                    <li itemprop="name"><a itemprop="url" href="~/Home/Live">@Resources.GlobalRes.Live</a></li>
+                    <li itemprop="name"><a itemprop="url" href="~/Home/History">@Resources.GlobalRes.History</a></li>*@
+                </ul>
+            </div><!-- // col-md-4 -->
+
+        </div><!-- // row -->
+        <div class="row">
+
+        </div>
+    </div><!-- // container-full -->
+</header>

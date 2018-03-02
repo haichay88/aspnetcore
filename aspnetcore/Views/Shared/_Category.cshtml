@@ -1,0 +1,48 @@
+﻿
+@*<div id="main-category">
+    <div class="container-full">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="main-category-menu">
+                    <li class="color-1"><a href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Music"), id = 10 })"><i class="fa fa-music"></i>@Resources.GlobalRes.Music</a></li>
+                    <li class="color-2"><a href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Sports"), id = 17 })"><i class="fa fa-soccer-ball-o"></i>@Resources.GlobalRes.Sports</a></li>
+                    <li class="color-3"><a href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Gaming"), id = 20 })"><i class="fa fa-gamepad"></i>@Resources.GlobalRes.Gaming</a></li>
+                    <li class="color-1"><a href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("News"), id = 25 })"><i class="fa fa-newspaper-o"></i>@Resources.GlobalRes.News</a></li>
+                    <li class="color-2"><a href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Shows"), id = 43 })"><i class="fa fa-rocket"></i>@Resources.GlobalRes.Shows</a></li>
+                    <li class="color-3"><a href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Comedy"), id = 34 })"><i class="fa fa-ticket"></i>@Resources.GlobalRes.Comedy</a></li>
+                    <li class="color-1"><a href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Movies"), id = 30 })"><i class="fa fa-file-video-o"></i>@Resources.GlobalRes.Movies</a></li>
+                    <li class="color-2"><a href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Science & Technology"), id = 28 })"><i class="fa fa-globe"></i>@Resources.GlobalRes.ScienceTechnology</a></li>
+                    <li class="color-3"><a href="~/Home/Live"><i class="fa fa-play-circle-o"></i>Live</a></li>
+
+
+
+                </ul>
+            </div><!-- // col-md-14 -->
+        </div><!-- // row -->
+    </div><!-- // container-full -->
+</div>*@
+
+<aside id="sidebar" class="custom-elements">
+    <div class="scrollable-area-wrapper noscroll-vertical sidebm sidebm">
+        <div class="sidebar-holder scrollable-area sidebm_d">
+            <div class="sb_title active">@Resources.GlobalRes.Trending</div>
+            <ul class="min-list clearfix" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+                <li><a itemprop="url" href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Film & Animation"), id = 1 })"><i class="fa fa-film cate-icon" aria-hidden="true"></i>@Resources.GlobalRes.Movies</a></li>
+                <li><a itemprop="url" href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Autos & Vehicles"), id = 2 })"><i class="fa fa-car cate-icon" aria-hidden="true"></i>@Resources.GlobalRes.AutosVehicles</a></li>
+                <li><a itemprop="url" href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Music"), id = 10 })"><i class="fa fa-music cate-icon" aria-hidden="true"></i>@Resources.GlobalRes.Music</a></li>
+                <li><a itemprop="url" href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Pets & Animals"), id = 15 })"><i class="fa fa-paw cate-icon" aria-hidden="true"></i>@Resources.GlobalRes.PetsAnimals</a></li>
+                <li><a itemprop="url" href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Sports"), id = 17 })"><i class="fa fa-futbol-o cate-icon" aria-hidden="true"></i>@Resources.GlobalRes.Sports</a></li>
+                <li><a itemprop="url" href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Travel & Events"), id = 19 })"><i class="fa fa-globe cate-icon" aria-hidden="true"></i>@Resources.GlobalRes.TravelEvents</a></li>
+                <li><a itemprop="url" href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Gaming"), id = 20 })"><i class="fa fa-gamepad cate-icon" aria-hidden="true"></i>@Resources.GlobalRes.Gaming</a></li>
+                <li><a itemprop="url" href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Comedy"), id = 23 })"><i class="fa fa-smile-o cate-icon" aria-hidden="true"></i>@Resources.GlobalRes.Comedy</a></li>
+                <li><a itemprop="url" href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Entertainment"), id = 24 })"><i class="fa fa-star-o cate-icon" aria-hidden="true"></i>@Resources.GlobalRes.Shows</a></li>
+                <li><a itemprop="url" href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Howto & Style"), id = 26 })"><i class="fa fa-thumbs-o-up cate-icon" aria-hidden="true"></i>@Resources.GlobalRes.HowtoStyle</a></li>
+                <li><a itemprop="url" href="@Url.RouteUrl("videoByCategory", new {text = MyFinance.Utils.CommonUtil.FriendlyURL("Science & Technology"), id = 28 })"><i class="fa fa-flask cate-icon" aria-hidden="true"></i>@Resources.GlobalRes.ScienceTechnology</a></li>
+            </ul><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+        </div>
+        <div class="vscrollbar" style="height:620px;display:none;">
+            <div class="vscroll-up btn-disabled"></div>
+            <div class="vscroll-line" style="position:relative;height:0px;"><div class="vscroll-slider" style="position:absolute;height:0px;top:0px;"><div class="scroll-bar-top"></div><div class="scroll-bar-bottom"></div></div></div><div class="vscroll-down btn-disabled"></div>
+        </div>
+    </div>
+</aside>

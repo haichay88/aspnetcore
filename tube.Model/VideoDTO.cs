@@ -28,7 +28,7 @@ namespace tube.Model
         {
             get
             {
-                return this.publishDated.HasValue ? publishDated.Value.ConvertDateTimeToRealTime() : string.Empty;
+                return  string.Empty;//this.publishDated.HasValue ? publishDated.Value.ConvertDateTimeToRealTime() :
             }
         }
         public string viewcountView
@@ -94,7 +94,7 @@ namespace tube.Model
         {
             get
             {
-                return this.publishDated.HasValue ? publishDated.Value.ConvertDateTimeToRealTime() : string.Empty;
+                return  string.Empty;//this.publishDated.HasValue ? publishDated.Value.ConvertDateTimeToRealTime() :
             }
         }
 
