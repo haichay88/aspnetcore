@@ -17,6 +17,7 @@ namespace tube.Services
         public VideoService()
         {
             InitService();
+            _keyservice = new APIFileBusiness();
         }
 
         private void InitService()
@@ -30,12 +31,13 @@ namespace tube.Services
 
                 ApplicationName = "tube"
             });
-
+           
         }
         #endregion
         #region Properties
         private string key { get; set; }
         private YouTubeService _Service { get; set; }
+        private IAPIKeyBusiness _keyservice { get; set; }
         private static readonly log4net.ILog log =
            log4net.LogManager.GetLogger(
                     System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -47,7 +49,7 @@ namespace tube.Services
             {
                 var searchListRequest = _Service.Search.List("snippet");
 
-                searchListRequest.RegionCode = RegionManager.RegionCode; // Replace with your search term.
+                searchListRequest.RegionCode = request.RegionCode; // Replace with your search term.
 
                 searchListRequest.Q = request.keyword;
 
@@ -82,9 +84,8 @@ namespace tube.Services
                 log.Error("SearchVideo ex: " + ex);
                 if (ex.HttpStatusCode != System.Net.HttpStatusCode.BadRequest)
                 {
-                    var apiKey = IoC.Get<IAPIKeyBusiness>();
-                    apiKey.SetOverLimit();
-                    apiKey.GetDefaultKey();
+                    _keyservice.SetOverLimit();
+                    _keyservice.GetDefaultKey();
                     InitService();
                     var result = SearchVideo(request);
                     return result;
@@ -138,9 +139,8 @@ namespace tube.Services
                 log.Error("LiveVideo ex: " + ex);
                 if (ex.HttpStatusCode != System.Net.HttpStatusCode.BadRequest)
                 {
-                    var apiKey = IoC.Get<IAPIKeyBusiness>();
-                    apiKey.SetOverLimit();
-                    apiKey.GetDefaultKey();
+                    _keyservice.SetOverLimit();
+                    _keyservice.GetDefaultKey();
 
                     InitService();
                     var result = LiveVideo(request);
@@ -156,14 +156,14 @@ namespace tube.Services
 
         }
 
-        public List<VideoDTO> GetTrendingVideo()
+        public List<VideoDTO> GetTrendingVideo(RequestBase request)
         {
             try
             {
 
                 var searchListRequest = _Service.Videos.List("snippet,contentDetails,statistics");
 
-                searchListRequest.RegionCode = RegionManager.RegionCode; // Replace with your search term.
+                searchListRequest.RegionCode = request.RegionCode; // Replace with your search term.
                 searchListRequest.Chart = VideosResource.ListRequest.ChartEnum.MostPopular;
 
                 searchListRequest.MaxResults = 24;
@@ -198,16 +198,15 @@ namespace tube.Services
             catch (Google.GoogleApiException ex)
             {
                 log.Error("GetTrendingVideo ex: " + ex);
-                log.Info("RegionCode: " + RegionManager.RegionCode);
+                log.Info("RegionCode: " + request.RegionCode);
 
                 if (ex.HttpStatusCode != System.Net.HttpStatusCode.BadRequest)
                 {
 
-                    var apiKey = IoC.Get<IAPIKeyBusiness>();
-                    apiKey.SetOverLimit();
-                    apiKey.GetDefaultKey();
+                    _keyservice.SetOverLimit();
+                    _keyservice.GetDefaultKey();
                     InitService();
-                    return GetTrendingVideo();
+                    return GetTrendingVideo(request);
                 }
                 else
                 {
@@ -222,14 +221,14 @@ namespace tube.Services
         public List<VideoDTO> GetVideoByCate(RequestBase request)
         {
             List<VideoDTO> videos = new List<VideoDTO>();
-            var lang = LanguageHelper.LanguageMang.LangIsSeleted();
+           
             try
             {
                 var searchListRequest = _Service.Videos.List("snippet,contentDetails,statistics");
 
-                searchListRequest.RegionCode = RegionManager.RegionCode; // Replace with your search term.
+                searchListRequest.RegionCode = request.RegionCode; // Replace with your search term.
                 searchListRequest.Chart = VideosResource.ListRequest.ChartEnum.MostPopular;
-                searchListRequest.Hl = lang.hl;
+                searchListRequest.Hl = request.hl;
                 searchListRequest.VideoCategoryId = request.CategoryId;
                 searchListRequest.MaxResults = request.MaxResults;
 
@@ -261,13 +260,12 @@ namespace tube.Services
 
                 log.Error("GetVideoByCate ex: " + ex);
                 log.Info("key use: " + CommonKey.KeyActive);
-                log.Info("hl: " + lang.hl);
+                log.Info("hl: " + request.hl);
                 if (ex.HttpStatusCode != System.Net.HttpStatusCode.BadRequest)
                 {
 
-                    var apiKey = IoC.Get<IAPIKeyBusiness>();
-                    apiKey.SetOverLimit();
-                    apiKey.GetDefaultKey();
+                    _keyservice.SetOverLimit();
+                    _keyservice.GetDefaultKey();
 
                     InitService();
                     var result = GetVideoByCate(request);
@@ -287,7 +285,7 @@ namespace tube.Services
 
             var searchListRequest = _Service.Search.List("snippet");
 
-            searchListRequest.RegionCode = LanguageHelper.RegionManager.RegionCode; // Replace with your search term.
+            searchListRequest.RegionCode = request.RegionCode; // Replace with your search term.
             searchListRequest.ChannelId = request.channelId;
             searchListRequest.MaxResults = request.MaxResults;
 
@@ -315,17 +313,17 @@ namespace tube.Services
             return videos;
         }
 
-        public List<ChannelTrendingDTO> ChannelBy()
+        public List<ChannelTrendingDTO> ChannelBy(RequestBase request)
         {
             List<ChannelTrendingDTO> data = new List<ChannelTrendingDTO>();
             try
             {
                 var searchListRequest = _Service.Videos.List("snippet");
-                var lang = LanguageMang.LangIsSeleted();
-                searchListRequest.RegionCode = RegionManager.RegionCode; // Replace with your search term.
+               
+                searchListRequest.RegionCode = request.RegionCode; // Replace with your search term.
                 searchListRequest.Chart = VideosResource.ListRequest.ChartEnum.MostPopular;
                 searchListRequest.MaxResults = 4;
-                searchListRequest.Hl = lang.hl;
+                searchListRequest.Hl = request.hl;
 
 
                 // Call the search.list method to retrieve results matching the specified query term.
@@ -419,9 +417,8 @@ namespace tube.Services
                 if (ex.HttpStatusCode != System.Net.HttpStatusCode.BadRequest)
                 {
 
-                    var apiKey = IoC.Get<IAPIKeyBusiness>();
-                    apiKey.SetOverLimit();
-                    apiKey.GetDefaultKey();
+                    _keyservice.SetOverLimit();
+                    _keyservice.GetDefaultKey();
 
                     InitService();
                     var result = GetDetailVideo(request);

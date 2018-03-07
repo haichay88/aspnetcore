@@ -28,17 +28,18 @@ namespace aspnetcore.Controllers
         [TubeActionFilter]
         public IActionResult Index()
         {
+            RequestBase request = new RequestBase()
+            {
+                MaxResults = 12
+            };
             ViewHomeVideoDTO model = new ViewHomeVideoDTO();
-            model.VideoTrendings = _Service.GetTrendingVideo();
+            model.VideoTrendings = _Service.GetTrendingVideo(request);
 
             if (model.VideoTrendings != null)
             {
                 addMetaTag(model.VideoTrendings[0]);
             }
-            RequestBase request = new RequestBase()
-            {
-                MaxResults = 12
-            };
+           
             // lay video theo chu de music
             request.CategoryId = "10";
             model.VideoMusics = _Service.GetVideoByCate(request);
@@ -59,7 +60,7 @@ namespace aspnetcore.Controllers
             request.CategoryId = "2";
             model.VideoShows = _Service.GetVideoByCate(request);
 
-            model.ChannelHots = _Service.ChannelBy();
+            model.ChannelHots = _Service.ChannelBy(request);
 
             return View(model);
 

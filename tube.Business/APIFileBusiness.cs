@@ -42,6 +42,7 @@ namespace tube.Business
 
         public List<APIFile> ReadKeyLocal()
         {
+            Console.Write(URLROOT);
             bool isexist = File.Exists(URLROOT);
 
             if (isexist)
